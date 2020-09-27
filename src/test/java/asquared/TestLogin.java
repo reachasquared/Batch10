@@ -1,16 +1,11 @@
 package asquared;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import core.engine.AsquaredWebDriverFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class TestLogin {
     private WebDriver driver;
@@ -20,6 +15,7 @@ public class TestLogin {
 
     @Before
     public void setUp() throws Exception {
+        //opening chrome browser
         driver = AsquaredWebDriverFactory.getDriver("chrome");
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
