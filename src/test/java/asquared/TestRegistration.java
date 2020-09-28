@@ -3,64 +3,42 @@ package asquared;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+public class TestRegistration extends BeforeAfter{ //class begins
+    @Test
+    public void testRegistration(){ //test methods begins
 
-public class TestRegistration extends BeforeAfter{//class begins
-     @Test
-public void TestRegistration(){//test method begins
+        //Step 0	Go to http://demo.guru99.com/V1/index.php
 
+        //Assert page title:  GTPL Bank Home Page
 
-//Step 0 Go to http://demo.guru99.com/V1/index.php
-          driver.get("http://demo.guru99.com/V1/index.php");
-//Assert page title:  GTPL Bank Home Page
-          assertEquals("GTPL Bank Home Page",driver.getTitle());
+        //Step 1	Click on "New Tours" link on the header bar
 
-//Step 1   Click on "New Tours" link on the header bar
-          assertTrue(driver.findElement(By.linkText("New Tours")).isDisplayed());
-          driver.findElement(By.linkText("New Tours")).click();
+        //Assert page title : Welcome: Mercury Tours
 
-//Assert page title : Welcome: Mercury Tours
-          assertEquals("Welcome: Mercury Tours",driver.getTitle());
+        //Verify REGISTER link is present
 
-//Verify REGISTER link is present
-          assertTrue(driver.findElement(By.linkText("REGISTER")).isDisplayed());
+        //Click on REGISTER link
 
-//Click on REGISTER link
-          driver.findElement(By.linkText("REGISTER")).click();
+        //Assert page title : Register: Mercury Tours
 
-//Assert page title : Register: Mercury Tours
-          assertEquals("Register: Mercury Tours",driver.getTitle());
+        //Enter asquared in First Name
 
-//Enter asquared in First Name
-          driver.findElement(By.name("firstName")).clear();
-          driver.findElement(By.name("firstName")).sendKeys("asquared");
+        //Enter asquared in Last Name
 
-//Enter asquared in Last Name
-          driver.findElement(By.name("lastName")).clear();
-          driver.findElement(By.name("lastName")).sendKeys("asquared");
-//Enter 9049049044 in Phone
-          driver.findElement(By.name("phone")).clear();
-          driver.findElement(By.name("phone")).sendKeys("9049049044");
-//Select UNITED KINGDOM from Country
-          driver.findElement(By.name("country")).sendKeys("UNITED KINGDOM");
+        //Enter 9049049044 in Phone
 
-//Click Submit
-          driver.findElement(By.name("submit")).click();
+        //Select UNITED KINGDOM from Country
 
-//Verify "Dear asquare asquared," text is displayed
-          //assertTrue(driver.findElement(By.tagName("Dear asquare asquared")).isDisplayed());
+        //Click Submit
 
-//verify Sign-off link exists
-          assertTrue(driver.findElement(By.linkText("SIGN-OFF")).isDisplayed());
+        //Verify "Dear asquare asquared," text is displayed
 
-// Verify REGISTER image is displayed
-          assertTrue(driver.findElement(By.linkText("register")).isDisplayed());
+        //verify Sign-off link exists
 
-//click SIGN-OFF
-          driver.findElement(By.linkText("SIGN-OFF")).click();
+        // Verify REGISTER image is displayed
+
+        //click SIGN-OFF
 
 
-
-     }// test method ends
+    } // test method ends
 }//class ends
