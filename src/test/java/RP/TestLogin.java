@@ -1,30 +1,39 @@
-package asquared;
+package RP;
 
+import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import core.engine.AsquaredWebDriverFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
-public class TestLogin {
-    private WebDriver driver;
-    private String baseUrl;
-    private boolean acceptNextAlert = true;
+public class TestLogin {//class starts
+    private WebDriver driver;//variable/webdriver class declaration
+    private String baseUrl;//variable declaration
+    private boolean acceptNextAlert = true;//variable declaration
     private StringBuffer verificationErrors = new StringBuffer();
 
-    @Before
+    @Before//associated with Junit association
     public void setUp() throws Exception {
         //opening chrome browser
-        driver = AsquaredWebDriverFactory.getDriver("chrome");
+       // driver = new FirefoxDriver();
+        driver = AsquaredWebDriverFactory.getDriver("chrome");//driver is an object and it is created
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test//associated with Junit association
     public void testLogin() throws Exception {
-        driver.get("http://demo.guru99.com/V1/index.php");
-        assertEquals("GTPL Bank Home Page", driver.getTitle());
+        driver.get("http://demo.guru99.com/V1/index.php");//telling driver to open url
+        try {
+            assertEquals("GTPL Bank Home Page", driver.getTitle());//hey driver,verify page title
+        } catch (Error e) {
+            verificationErrors.append(e.toString());
+        }
         for (int second = 0;; second++) {
             if (second >= 60) fail("timeout");
             try { if (isElementPresent(By.name("uid"))) break; } catch (Exception e) {}
@@ -57,7 +66,7 @@ public class TestLogin {
         }
     }
 
-    @After
+    @After//associated with Junit association
     public void tearDown() throws Exception {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();

@@ -23,7 +23,7 @@ public class global {
     @Before
     public void setUp() throws Exception {
         driver = AsquaredWebDriverFactory.getDriver("chrome");
-        baseUrl = "http://newtours.demoaut.com/";
+        baseUrl = "http://demo.guru99.com/V1/index.php";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
