@@ -40,28 +40,23 @@ public class TestRegistration extends BeforeAfter {//class TestRegistration begi
         driver.findElement(By.name("firstName")).sendKeys("asquared");
 
         //Enter asquared in Last Name
-        //driver.findElement(By.name("Last Name")).isDisplayed();
-       driver.findElement(By.name("lastName")).clear();
+        driver.findElement(By.name("lastName")).clear();
         driver.findElement(By.name("lastName")).sendKeys("asquared");
 
         //Enter 9049049044 in Phone
-        //driver.findElement(By.name("Phone")).isDisplayed();
-      //driver.findElement(By.name("Phone")).clear();
-        driver.findElement(By.name("Phone")).sendKeys("9049049044");
+        driver.findElement(By.name("phone")).clear();
+        driver.findElement(By.name("phone")).sendKeys("9049049044");
 
         //Select UNITED KINGDOM from Country
-        //driver.findElement(By.name("Country")).isDisplayed();
-       driver.findElement(By.name("Country")).clear();
-        driver.findElement(By.name("Country")).sendKeys("UNITED KINGDOM");
+        driver.findElement(By.name("country")).sendKeys("UNITED KINGDOM");
 
         //Click Submit
-        driver.findElement(By.name("Submit")).click();
+        driver.findElement(By.name("submit")).click();
 
     //Verify "Dear asquare asquared," text is displayed
-        assertEquals("Dear asquare asquared",driver.getTitle());
+        //assertEquals("Dear asquared asquared",driver.getTitle());
         //verify Sign-off link exists
-        //assertTrue(driver.findElement(By.name("Sign-off")).isDisplayed());
-        //driver.findElement(By.linkText("Sign-off")).click();
+        assertTrue(driver.findElement(By.linkText("SIGN-OFF")).isDisplayed());
 
         // Verify REGISTER image is displayed
        //assertTrue(driver.findElement(By.name("REGISTER")).isDisplayed());
