@@ -1,4 +1,4 @@
-package asquared;
+package YESHA;
 
 import core.engine.AsquaredWebDriverFactory;
 import org.junit.After;

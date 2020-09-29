@@ -16,6 +16,7 @@ public class BeforeAfter { // class begins
     @After
     public void tearDown() {
         driver.quit();
+
     }
 
 }// class ends
