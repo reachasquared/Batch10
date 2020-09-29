@@ -11,10 +11,13 @@ public class TestToursLogin extends global {//class begins
     @Test
     public void TestToursLogin(){//method begins
 
+//Step 0	Go to http://demo.guru99.com/V1/index.php
+
+        driver.get("http://demo.guru99.com/V1/index.php");
 
 
 //Step 1	Go to http://newtours.demoaut.com
-    driver.getTitle("http://newtours.demoaut.com");
+    driver.get("http://newtours.demoaut.com");
 
 //Assert page title : Welcome: Mercury Tours
         assertEquals("Welcome: Mercury Tours",driver.getTitle());
