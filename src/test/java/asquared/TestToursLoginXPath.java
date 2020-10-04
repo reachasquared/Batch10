@@ -2,12 +2,17 @@ package asquared;
 
 import core.engine.global;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
-public class TestToursLogin extends global {//class begins
+import static org.junit.Assert.assertTrue;
+
+public class TestToursLoginXPath extends global { //class begins
     @Test
-    public void testToursLogin(){ //method begins
-
+    public void testToursLoginXPath(){ // method begins
         //Step 1	Go to http://demo.guru99.com/V1/index.php
+        //driver.get("http://demo.guru99.com/V1/index.php");
+        logger.info("Step 1\tGo to " + baseUrl);
+        driver.get(baseUrl);
 
         //Assert page title:  GTPL Bank Home Page
 
@@ -16,6 +21,7 @@ public class TestToursLogin extends global {//class begins
         //Assert page title : Welcome: Mercury Tours
 
         //Verify User Name and Password fields and Submit button exist
+        assertTrue(driver.findElement(By.xpath("//input[@name='userName']")).isDisplayed());
 
         //Step 3	Enter asquared in user name field
 
@@ -26,5 +32,6 @@ public class TestToursLogin extends global {//class begins
         //Assert page title is Find a Login: Mercury Tours:
 
         //Step 6 Click on SIGN-OFF
-    }//method ends
+
+    } //method ends
 }//class ends
