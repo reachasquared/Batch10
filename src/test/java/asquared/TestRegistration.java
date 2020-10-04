@@ -1,9 +1,9 @@
 package asquared;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 
-public class TestRegistration extends BeforeAfter{ //class begins
+public class TestRegistration extends BeforeAfter { //class begins
+
     @Test
     public void testRegistration(){ //test methods begins
 
@@ -38,7 +38,6 @@ public class TestRegistration extends BeforeAfter{ //class begins
         // Verify REGISTER image is displayed
 
         //click SIGN-OFF
-
 
     } // test method ends
 }//class ends

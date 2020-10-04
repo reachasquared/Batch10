@@ -9,19 +9,21 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class TestRegistration extends BeforeAfter{//class testbegin
-  private WebDriver driver;
+public class TestRegistration extends BeforeAfter{
 
+    ;//class testbegin
+    
   @Test
 public void TestRegistration(){//test methods begins
 
 
 //Step 0	Go to http://demo.guru99.com/V1/index.php
+
     driver.get("http://demo.guru99.com/V1/index.php");
 //Assert page title:  GTPL Bank Home Page
     assertEquals( "GTPL Bank Home Page",driver.getTitle());
 //Step 1	Click on "New Tours" link on the header bar
-   assertTrue(driver.findElement(By.linkText("NewTours")).isDisplayed());
+       driver.findElement(By.linkText("NewTours")).click();
 
 //Assert page title : Welcome: Mercury Tours
     assertEquals("Welcome: Mercury Tours",driver.getTitle());
