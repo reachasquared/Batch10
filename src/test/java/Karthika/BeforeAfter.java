@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
 public class BeforeAfter {//class begins
-    private WebDriver driver;
+    public WebDriver driver;
     @Before
     public void setup() {//setup method
         driver= AsquaredWebDriverFactory.getDriver("chrome");
