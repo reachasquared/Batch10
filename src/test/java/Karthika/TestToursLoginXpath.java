@@ -2,10 +2,6 @@ package Karthika;
 
 import core.engine.global;
 import org.junit.Test;
-import org.openqa.selenium.By;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class TestToursLoginXpath extends global {// class begins
    @Test
@@ -21,7 +17,7 @@ driver.get(baseUrl);
        //Assert page title : Welcome: Mercury Tours
 
        //Verify User Name and Password fields and Submit button exist
-       assertTrue( driver.findElements(By.xpath("//input[contains(@name,'userName')]")).;
+       //assertTrue( driver.findElements(By.xpath("//input[contains(@name,'userName')]"));
        //Step 3	Enter asquared in user name field
 
        //Step 4	Enter asquared in password field
