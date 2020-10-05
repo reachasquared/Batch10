@@ -21,6 +21,7 @@ public class TestVariablesAndMethods {//class begins
         String lastName;
         lastName="LLC.";
         System.out.println(lastName);
+        //concatenated lastname to firstname
         fullName=fullName+" "+lastName;
     }//methodTwo ends
     public void displayName(){//method starts
