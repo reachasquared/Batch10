@@ -11,55 +11,55 @@ public class TestFlightsSearch extends global { //class begins
     @Test
     public void testFlightsSearch(){ //method begins
         //Step 1	Go to http://demo.guru99.com/V1/index.php
-        logger.info("Step 1  Go to http://demo.guru99.com/V1/index.php");
+        logger.info("Step 1: Go to http://demo.guru99.com/V1/index.php");
         driver.get(baseUrl);
 
         //Assert page title:  GTPL Bank Home Page
-        logger.info("Assert page title:  GTPL Bank Home Page");
+        logger.info("Step 1: Assert page title:  GTPL Bank Home Page");
         assertEquals("GTPL Bank Home Page", driver.getTitle());
 
-        //Step 1	Verify & Click on "New Tours" link on the header bar
-        logger.info("Step 1\tVerify & Click on \"New Tours\" link on the header bar");
+        //Step 2	Verify & Click on "New Tours" link on the header bar
+        logger.info("Step 2: Verify & Click on \"New Tours\" link on the header bar");
         driver.findElement(By.xpath("//a[text()='New Tours']")).click();
 
-        //Assert page title : Welcome: Mercury Tours
+        //Step 2: Assert page title : Welcome: Mercury Tours
 
-        //Verify Flights link exists
+        //Step 3: Verify Flights link exists
         assertTrue(driver.findElement(By.xpath("//a[text()='Flights']")).isDisplayed());
 
-        //Click on Flights link
+        //Step 4: Click on Flights link
         driver.findElement(By.xpath("//a[text()='Flights']")).click();
 
-        //Verify page title: Find a Flight: Mercury Tours:
+        //Step 5: Verify page title: Find a Flight: Mercury Tours:
 
-        //Verify that Sub heading Flight Details is present
+        //Step 6: Verify that Sub heading Flight Details is present
 
-        //Verify Type Round Trip, One Way radio exists
+        //Step 7: Verify Type Round Trip, One Way radio exists
         assertTrue(driver.findElement(By.xpath("//input[@value='roundtrip']")).isDisplayed());
 
-        //Verify Passengers, Departing From, On, Arriving In, Returning drop downs exists
+        //Step 8: Verify Passengers, Departing From, On, Arriving In, Returning drop downs exists
 
-        //Verify that Sub heading Preferences is present
+        //Step 9: Verify that Sub heading Preferences is present
 
-        //Verify Service Class radios exists
+        //Step 10: Verify Service Class radios exists
 
-        //Verify Airline drop down exists
+        //Step 11: Verify Airline drop down exists
 
-        //Verify Continue exists
+        //Step 12: Verify Continue exists
 
-        //Select Type = One Way
+        //Step 13: Select Type = One Way
 
-        //Select Passengers = 4
+        //Step 14: Select Passengers = 4
 
-        //Select Departing From = New York
+        //Step 15: Select Departing From = New York
 
-        //Select On = December, 15
+        //Step 16: Select On = December, 15
 
-        //Select Arriving In = Paris
+        //Step 17: Select Arriving In = Paris
 
-        //Select Service Class = First class
+        //Step 18: Select Service Class = First class
 
-        // Click Continue
+        //Step 19: Click Continue
 
     }//method ends
 }//class ends

@@ -16,7 +16,6 @@ import static org.junit.Assert.fail;
 public class global {
     public WebDriver driver;
     public String baseUrl;
-    public boolean acceptNextAlert = true;
     public StringBuffer verificationErrors = new StringBuffer();
     public Logger logger = LogManager.getLogger("test");
 
