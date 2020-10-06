@@ -23,13 +23,13 @@ public void TestRegistration(){//test methods begins
 //Assert page title:  GTPL Bank Home Page
     assertEquals( "GTPL Bank Home Page",driver.getTitle());
 //Step 1	Click on "New Tours" link on the header bar
+      assertTrue(driver.findElement(By.linkText("New Tours")).isDisplayed());
        driver.findElement(By.linkText("NewTours")).click();
 
 //Assert page title : Welcome: Mercury Tours
     assertEquals("Welcome: Mercury Tours",driver.getTitle());
-    driver.findElement(By.linkText("New Tours")).click();
 
-      //Verify REGISTER link is present
+   // verify REGISTER link is present
    assertTrue(driver.findElement(By.linkText("REGISTER")).isDisplayed());
       //Click on REGISTER link
 driver.findElement(By.name("btn register")).click();
@@ -52,9 +52,9 @@ driver.findElement(By.name("COUNTRY")).sendKeys("UNITED KINGDOM");
       //Click Submit
     driver.findElement(By.name("BTN SUBMIT")).click();
       //Verify "Dear asquare asquared," text is displayed
-assertTrue(driver.findElement(By.name("Dear asquare asquared")).isDisplayed());
+assertTrue(driver.findElement(By.linkText("Dear asquare asquared")).isDisplayed());
       //verify Sign-off link exists
-assertTrue(driver.findElement(By.name("sing-off")).isDisplayed());
+assertTrue(driver.findElement(By.linkText("sing-off")).isDisplayed());
       // Verify REGISTER image is displayed
 assertTrue(driver.findElement(By.linkText("REGISTER")).isDisplayed());
       //click SIGN-OFF

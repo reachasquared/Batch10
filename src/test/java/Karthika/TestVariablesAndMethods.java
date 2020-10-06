@@ -16,7 +16,7 @@ public class TestVariablesAndMethods {//class begins
     }
     public void methodOne(){//method begins
         String firstName;//local variable
-        firstName = "Dharti";
+        firstName = "Karthika";
         System.out.println(firstName);
         //assigned firstName to fullname variable
         fullName = firstName ;
@@ -25,7 +25,7 @@ public class TestVariablesAndMethods {//class begins
 
     public void methodTwo(){//method begins
         String lastName;//local variable
-        lastName = "Patel";
+        lastName = "Balaji";
         System.out.println(lastName);
 
         //concatenated lastName to fullName
