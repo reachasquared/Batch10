@@ -3,6 +3,7 @@ package asquared;
 import core.engine.global;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -32,12 +33,20 @@ public class TestFlightsSearch extends global { //class begins
 
         //Step 5: Verify page title: Find a Flight: Mercury Tours:
 
-        //Step 6: Verify that Sub heading Flight Details is present
+        //Step 6: Verify that Sub heading "Flight Details" is present
+        logger.info("Step 6: Verify that Sub heading \"Flight Details\" is present");
+        assertTrue(driver.findElement(By.xpath("//font[contains(text(),'Details')]")).isDisplayed());
 
         //Step 7: Verify Type Round Trip, One Way radio exists
         assertTrue(driver.findElement(By.xpath("//input[@value='roundtrip']")).isDisplayed());
 
-        //Step 8: Verify Passengers, Departing From, On, Arriving In, Returning drop downs exists
+        //Step 8: Verify Passengers
+        // , Departing From,
+        // On,
+        // Arriving In,
+        // Returning drop downs exists
+        logger.info("Step 8: Verify Passengers, Departing From, On, Arriving In, Returning drop downs exists");
+        assertTrue(driver.findElement(By.xpath("//select[@name='passCount']")).isDisplayed());
 
         //Step 9: Verify that Sub heading Preferences is present
 
@@ -48,8 +57,14 @@ public class TestFlightsSearch extends global { //class begins
         //Step 12: Verify Continue exists
 
         //Step 13: Select Type = One Way
+        logger.info("Step 13: Select Type = One Way");
+        driver.findElement(By.xpath("//input[@name='tripType' and @value='oneway']")).click();
 
         //Step 14: Select Passengers = 4
+        logger.info("Step 14: Select Passengers = 4");
+        new Select(driver.findElement(By.xpath("//select[@name='passCount']")))
+                .selectByVisibleText("4");
+
 
         //Step 15: Select Departing From = New York
 
